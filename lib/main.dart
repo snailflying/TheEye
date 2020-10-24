@@ -83,7 +83,7 @@ class EyeBottomState extends State<MyApp> {
       home: new Scaffold(
         appBar: new AppBar(
           // 设置AppBar标题
-            title: new Text("My OSC",
+            title: new Text(EyeLocalizations.i18n(context).app_name,
                 // 设置AppBar上文本的样式
                 style: new TextStyle(color: Colors.white)
             ),
