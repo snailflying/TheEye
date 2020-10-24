@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_eye/pages/HomePage.dart';
 import 'package:flutter_eye/pages/MinePage.dart';
 
+import 'common/localization/eye_localizations.dart';
 import 'common/localization/localizations_delegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -18,15 +19,25 @@ class MyApp extends StatefulWidget {
 
 class EyeBottomState extends State<MyApp> {
   // 页面当前选中的Tab的索引
-  var  _tabIndex = 0;
-  var appBarTitles = ['首页', '发现', '我的'];
+  var _tabIndex = 0;
+  var appBarTitles;
+
   List<BottomNavigationBarItem> _navigationViews;
 
 
 // 页面body部分组件
   var _body;
 
-  initData() {
+  _initState() {
+    appBarTitles = [ EyeLocalizations
+        .i18n(context)
+        .text_home, EyeLocalizations
+        .i18n(context)
+        .text_mine
+    ];
+  }
+
+  _initData() {
     _body = IndexedStack(
       children: <Widget>[HomePage(), MinePage()],
       index: _tabIndex,
@@ -36,6 +47,7 @@ class EyeBottomState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    _initState();
 
     _navigationViews = <BottomNavigationBarItem>[
       BottomNavigationBarItem(
@@ -50,11 +62,13 @@ class EyeBottomState extends State<MyApp> {
       ),
     ];
   }
+
   @override
   Widget build(BuildContext context) {
-    initData();
+    _initData();
 
     return new MaterialApp(
+
       ///多语言实现代理
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
@@ -67,15 +81,15 @@ class EyeBottomState extends State<MyApp> {
           primaryColor: const Color(0xFF63CA6C)
       ),
       home: new Scaffold(
-          appBar: new AppBar(
-            // 设置AppBar标题
-              title: new Text("My OSC",
-                  // 设置AppBar上文本的样式
-                  style: new TextStyle(color: Colors.white)
-              ),
-              // 设置AppBar上图标的样式
-              iconTheme: new IconThemeData(color: Colors.white)
-          ),
+        appBar: new AppBar(
+          // 设置AppBar标题
+            title: new Text("My OSC",
+                // 设置AppBar上文本的样式
+                style: new TextStyle(color: Colors.white)
+            ),
+            // 设置AppBar上图标的样式
+            iconTheme: new IconThemeData(color: Colors.white)
+        ),
         body: _body,
         bottomNavigationBar: BottomNavigationBar(
           items: _navigationViews
