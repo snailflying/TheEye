@@ -11,6 +11,10 @@ import 'eye_localizations.dart';
 class EyeLocalizationsDelegate extends LocalizationsDelegate<EyeLocalizations> {
 
   EyeLocalizationsDelegate();
+  final local = [
+    const Locale('en', 'US'),
+    const Locale('zh', 'CN'),
+  ];
 
   @override
   bool isSupported(Locale locale) {

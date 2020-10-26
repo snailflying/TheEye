@@ -37,7 +37,6 @@ class EyeLocalizations {
   ///通过 Localizations 加载当前的 GSYLocalizations
   ///获取对应的 GSYStringBase
   static StringBase i18n(BuildContext context) {
-    return (Localizations.of(context, EyeLocalizations) as EyeLocalizations)
-        .currentLocalized;
+    return of(context).currentLocalized;
   }
 }
