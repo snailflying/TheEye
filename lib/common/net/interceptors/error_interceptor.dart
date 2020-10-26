@@ -9,7 +9,7 @@ const NOT_TIP_KEY = "noTip";
 
 /**
  * 错误拦截
- * Created by guoshuyu
+ * Created by zhiqiang
  * on 2019/3/23.
  */
 class ErrorInterceptors extends InterceptorsWrapper {

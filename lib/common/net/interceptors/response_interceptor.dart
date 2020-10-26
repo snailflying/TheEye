@@ -5,7 +5,7 @@ import '../result_data.dart';
 
 /**
  * Token拦截器
- * Created by guoshuyu
+ * Created by zhiqiang
  * on 2019/3/23.
  */
 class ResponseInterceptors extends InterceptorsWrapper {

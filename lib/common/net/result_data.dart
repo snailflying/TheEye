@@ -1,6 +1,6 @@
 /**
  * 网络结果数据
- * Created by guoshuyu
+ * Created by zhiqiang
  * Date: 2018-07-16
  */
 class ResultData {

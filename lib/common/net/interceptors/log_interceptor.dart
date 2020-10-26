@@ -4,7 +4,7 @@ import 'package:flutter_eye/common/config/config.dart';
 
 /**
  * Log 拦截器
- * Created by guoshuyu
+ * Created by zhiqiang
  * on 2019/3/23.
  */
 class LogsInterceptors extends InterceptorsWrapper {
